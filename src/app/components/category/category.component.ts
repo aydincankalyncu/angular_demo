@@ -43,4 +43,10 @@ export class CategoryComponent implements OnInit {
        }
   }
 
+  clearSelectedCategory(){
+    if(this.currentCategory){
+      this.currentCategory = null;
+    }
+  }
+
 }

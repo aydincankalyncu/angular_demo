@@ -11,6 +11,7 @@ import { CategoryComponent } from './components/category/category.component';
 import { NaviComponent } from './components/navi/navi.component';
 
 import {ToastrModule} from "ngx-toastr";
+import { VatAddedPipe } from './pipes/vat-added.pipe';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {ToastrModule} from "ngx-toastr";
     ProductComponent,
     CategoryComponent,
     NaviComponent,
+    VatAddedPipe,
   ],
   imports: [
     BrowserModule,

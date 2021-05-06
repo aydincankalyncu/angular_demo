@@ -2,6 +2,15 @@
   <span class="visually-hidden">Loading...</span>
 </div>
 
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Ürün arama</label>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Arama ifadesi giriniz.">
+</div>
+
+<div class="alert alert-primary"   *ngIf="filterText">
+Ürünler arasında <b>{{filterText}}</b> aradınız
+</div>
+
 <table *ngIf="dataLoaded==true" class="table">
   <thead>
     <tr>
@@ -17,10 +26,10 @@
   <tbody>
     <tr *ngFor="let product of products">
       <td>{{ product.productId }}</td>
-      <td>{{ product.productName }}</td>
+      <td>{{ product.productName |uppercase }}</td>
       <td>{{ product.categoryId }}</td>
       <td>{{ product.unitPrice  }}</td>
-      <td>{{ product.unitPrice }}</td>
+      <td>{{ product.unitPrice |vatAdded:18 | currency }}</td>
       <td>{{ product.unitsInStock }}</td>
     </tr>
   </tbody>
